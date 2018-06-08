@@ -1,0 +1,108 @@
+<div class="formulario">
+  <form class="actorForm">
+    <mat-form-field class="formulario-actor" >
+      <input matInput placeholder="Nombres" name="nombresAct" [(ngModel)]='nombresAct'>
+    </mat-form-field>
+    <mat-form-field class="formulario-actor" >
+      <input matInput placeholder="Apellidos" name="apellidosAct" [(ngModel)]='apellidosAct'>
+    </mat-form-field>
+    <mat-form-field class="formulario-actor" >
+
+      <input matInput placeholder="Fecha de Nacimiento" name="fechaNacimientoAct" type="date" [(ngModel)]='fechaNacimientoAct'>
+
+    </mat-form-field>
+    <mat-form-field class="formulario-actor">
+      <input matInput placeholder="Numero de Peliculas"  name="numPeliculasAct" type="number" [(ngModel)]="numPeliculasAct">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Esta retirado" name="retiradoAct" [(ngModel)]='retiradoAct' #retiradoForm>
+        <mat-option [value]=true>Si</mat-option>
+        <mat-option [value]=false>No</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-4">
+        <button mat-raised-button style="width: 100%;" (click)="limiparPantalla()">Limpiar</button>
+      </div>
+      <div class="col-sm-2"></div>
+      <div class="col-sm-4">
+        <button mat-raised-button style="width: 100%;" (click)="hizoClickEnRegistro()">
+          Registrar
+        </button>
+        <!--<button mat-raised-button style="width: 100%;" (click)="crear(nombresForm.value, apellidoForm.value, fechaNacimientoForm.value, numeroPeliculasForm.value, retiradoForm.value)">-->
+        <!--Registrar-->
+        <!--</button>-->
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h3 class="first" align="center" style="margin-top: 30px">Ingresar Actor</h3>-->
+<!--<h3 class="first" align="center" style="margin-top: 30px"></h3>-->
+
+<!--<form id="Cabecera" class="example-form" #cabecera="ngForm" (ngSubmit)="agregarDatos(cabecera)" xmlns="">-->
+
+  <!--<mat-form-field>-->
+    <!--<input type="text" matInput placeholder="Nombres" name="nombres" [(ngModel)]="nombres">-->
+  <!--</mat-form-field>-->
+
+
+  <!--<mat-form-field>-->
+    <!--<input type="text" matInput placeholder="Apellido" name="apellidos" [(ngModel)]="apellidos">-->
+  <!--</mat-form-field>-->
+
+  <!--<mat-form-field>-->
+    <!--<input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento" name="fechaNacimiento" [(ngModel)]="fechaNacimiento">-->
+    <!--<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+    <!--<mat-datepicker #picker></mat-datepicker>-->
+  <!--</mat-form-field>-->
+
+  <!--<mat-form-field>-->
+    <!--<input type="number" matInput placeholder="Numero de Peiculas" name="numeroPeliculas" [(ngModel)]="numeroPeliculas">-->
+  <!--</mat-form-field>-->
+
+  <!--<mat-radio-group name="retirado" style="margin-top: 5px" [(ngModel)]="retirado">-->
+    <!--<mat-label>Retirad@: </mat-label>-->
+    <!--<mat-radio-button class="example-margin" style="padding-left: 20px" [value]=true>Si</mat-radio-button>-->
+    <!--<mat-radio-button class="example-margin" style="padding-left: 20px" [value]=false>No</mat-radio-button>-->
+  <!--</mat-radio-group>-->
+  <!--&lt;!&ndash;<div class="ui-g-6 ui-md-4" style="margin-right: 10px">-->
+    <!--<div class="ui-inputgroup">-->
+      <!--<label style="padding-right: 10px">Retirado</label>-->
+      <!--<p-checkbox name="activo" [(ngModel)]="retirado" binary="true"></p-checkbox>-->
+    <!--</div>&ndash;&gt;-->
+
+  <!--<button mat-stroked-button color="primary" style="width: 50%; margin-left: 25%; margin-top: 10px">Guardar</button>-->
+
+<!--</form>-->
+
+<!--&lt;!&ndash;<button onclick="document.getElementById('Cabecera').reset()" mat-stroked-button color="primary" style="margin-top: 5px; margin-left: 25%; width: 50%">Limpiar </button>&ndash;&gt;-->
+
+
+

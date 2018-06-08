@@ -1,0 +1,25 @@
+<div id="tarjeta">
+  <p-card class="cardActor" title="Detalle del actor" [style]="{height: '378px', width: '100%'}" style="padding: 10px">
+    <div class="detalleActor" *ngFor="let info of tarjeta">
+      <label>Nombres:</label>
+      {{info.nombres}}
+      <br>
+      <label>Apellidos:</label>
+      {{info.apellidos}}
+      <br>
+      <label>Fecha de nacimiento:</label>
+      {{info.fechaNacimiento}}
+      <br>
+      <label>Numero de Peliculas:</label>
+      {{info.numeroPeliculas}}
+      <br>
+      <label>Retirado:</label>
+      {{info.retirado}}
+    </div>
+  </p-card>
+</div>
+
+<!--<p-card title="Simple Card" [style]="{width: '360px'}">-->
+  <!--<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt-->
+    <!--quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</div>-->
+<!--</p-card>-->

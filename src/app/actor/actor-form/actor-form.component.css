@@ -1,0 +1,12 @@
+actor-form{
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.formulario-actor {
+  width: 100%;
+  padding-top: 0px;
+  border-top-width: 0px;
+
+}

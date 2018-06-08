@@ -1,0 +1,56 @@
+
+<!--<form id="formDetalle" class="pelicula-form" #detalle="ngForm" (ngSubmit)="agregarDatos(detalle)">-->
+<form id="formDetalle" class="pelicula-form">
+
+  <h3 class="first" style="text-align: center">Registrar Pelicula</h3>
+
+  <div class="casillaForm" style="margin-right: 10px">
+    <span class="ui-float-label"></span>
+    <input type="text" pInputText placeholder="Pelicula Id " name="identificadorPelicula" [(ngModel)]="identificadorPelicula" style="width: 100%;">
+  </div>
+
+  <div class="casillaForm">
+    <span class="ui-float-label"></span>
+    <input type="text" pInputText placeholder="Nombre " name="nombre" [(ngModel)]="nombre" style="width: 100%;">
+  </div>
+
+  <div class="casillaForm">
+    <span class="ui-float-label"></span>
+    <input id="anio" type="text" pInputText placeholder="Año " name="anioLanzamiento" [(ngModel)]="anioLanzamiento" style="width: 100%;">
+  </div>
+
+  <div class="casillaForm">
+    <span class="ui-float-label"></span>
+    <input id="raiting" type="text" pInputText placeholder="Raiting " name="rating" [(ngModel)]="rating" style="width: 100%;">
+  </div>
+
+  <div class="casillaForm">
+    <span class="ui-float-label"></span>
+    <input id="actores" type="text" pInputText placeholder="Actores " name="actoresPrincipales" [(ngModel)]="actoresPrincipales" style="width: 100%;">
+  </div>
+
+  <div class="casillaForm">
+    <span class="ui-float-label"></span>
+    <input id="sinopsis" type="text" pInputText placeholder="Sinopsis " name="sinopsis" [(ngModel)]="sinopsis" style="width: 100%;">
+  </div>
+
+  <div class="casillaForm">
+    <span class="ui-float-label"></span>
+    <input id="actorId" type="text" pInputText placeholder="Actor Id " name="actorId" [(ngModel)]="actorId" style="width: 100%;">
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">
+      <button pButton  type="primary"  label="Limpiar" class="ui-button-success"
+              style="width: 100%;" (click)="limiparPantalla()"></button>
+
+    </div>
+    <div class="col-sm-4">
+      <button pButton  type="primary"  label="Registrar" class="ui-button-success"
+              style="width: 100%;" (click)="registrar()"></button>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+
+</form>
