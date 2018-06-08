@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActorServiceService} from '../actor-service/actor-service.service';
 
 @Component({
   selector: 'app-actor-card',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorCardComponent implements OnInit {
 
-  constructor() { }
+  tarjeta = [];
+
+  constructor(private data: ActorServiceService) { }
 
   ngOnInit() {
+    this.data.mensajeActual2.subscribe(mensaje => this.tarjeta = mensaje);
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActorServiceService} from '../../actor/actor-service/actor-service.service';
 
 @Component({
   selector: 'app-pelicula-table',
@@ -8,20 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class PeliculaTableComponent implements OnInit {
 
   datosTabla = [];
-
-  constructor() { }
+  constructor(private data: ActorServiceService) { }
 
   ngOnInit() {
+    this.data.mensajeActual3.subscribe(mensaje => this.datosTabla = mensaje);
   }
-
-  cambiarBolean(estado) {
-
-    if (estado === true) {
-      return 'Si';
-    } else {
-      return 'No';
-    }
-
-  }
-
 }

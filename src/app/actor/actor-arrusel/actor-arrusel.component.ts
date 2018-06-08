@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActorServiceService} from '../actor-service/actor-service.service';
 
 @Component({
   selector: 'app-actor-arrusel',
@@ -9,9 +10,10 @@ export class ActorArruselComponent implements OnInit {
 
   arregloCarrusel = [];
 
-  constructor() { }
+  constructor(private data: ActorServiceService) { }
 
   ngOnInit() {
+    this.data.mensajeActual.subscribe(mensaje => this.arregloCarrusel = mensaje);
   }
 
 }

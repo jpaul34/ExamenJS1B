@@ -1,57 +1,29 @@
-<div id="tablaDetalle" style="padding-bottom: 20px">
-  <p-table [columns]="cols" [value]="datosTabla">
-           <!--*ngFor="let datos of datosTabla">-->
-    <ng-template pTemplate="header" let-columns>
-      <!--<h3 style="padding-top: 20px; width: 400px">Actor {{datos[0].nombres}}</h3>-->
+<div>
+  <p-table [value]="datosTabla">
+    <ng-template pTemplate="header">
       <tr>
-        <th style="text-align: center">#</th>
-        <th>ID Pelicula</th>
-        <th>Nombre</th>
-        <th>Año</th>
-        <th>Rating</th>
-        <th>Actores</th>
-        <th>Sinopsis</th>
-        <th>ActorId</th>
+        <th>#</th>
+        <th>ID PELICULA</th>
+        <th>NOMBRE</th>
+        <th>AÑO</th>
+        <th>RATING</th>
+        <th>ACTORES</th>
+        <th>SINOPSIS</th>
+        <th>ID ACTOR</th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-rowData let-colums="columns">
-      <!--<tr *ngFor="let datosTabla of datos[0].peliculas; let i = index">-->
-        <!--<th>{{i+1}}</th>-->
-        <!--<td>{{datosTabla.identificadorPelicula}}</td>-->
-        <!--<td>{{datosTabla.nombre}}</td>-->
-        <!--<td>{{datosTabla.anioLanzamiento}}</td>-->
-        <!--<td>{{datosTabla.rating}}</td>-->
-        <!--<td>{{datosTabla.actoresPrincipales}}</td>-->
-        <!--<td>{{datosTabla.sinopsis}}</td>-->
-        <!--<td>{{datosTabla.actorId}}</td>-->
-      <!--</tr>-->
-      <tr>
-        <td *ngFor="let col of columns">
-          {{rowData[col.field]}}
-        </td>
+    <ng-template pTemplate="body" let-datosTabla>
+      <tr *ngFor="let datosTabla of datosTabla[0].peliculas; let i = index">
+        <th>{{i+1}}</th>
+        <td>{{datosTabla.identificadorPelicula}}</td>
+        <td>{{datosTabla.nombre}}</td>
+        <td>{{datosTabla.anioLanzamiento}}</td>
+        <td>{{datosTabla.rating}}</td>
+        <td>{{datosTabla.actoresPrincipales}}</td>
+        <td>{{datosTabla.sinopsis}}</td>
+        <td>{{datosTabla.actorId}}</td>
       </tr>
     </ng-template>
   </p-table>
-
 </div>
 
-<!--<div>-->
-
-  <!--<p-table [columns]="cols" [value]="cars">-->
-    <!--<ng-template pTemplate="header" let-columns>-->
-      <!--<tr>-->
-        <!--<th *ngFor="let col of columns">-->
-          <!--{{col.header}}-->
-        <!--</th>-->
-      <!--</tr>-->
-    <!--</ng-template>-->
-    <!--<ng-template pTemplate="body" let-rowData let-columns="columns">-->
-      <!--<tr>-->
-        <!--<td *ngFor="let col of columns">-->
-          <!--{{rowData[col.field]}}-->
-        <!--</td>-->
-      <!--</tr>-->
-    <!--</ng-template>-->
-  <!--</p-table>-->
-
-<!--</div>-->

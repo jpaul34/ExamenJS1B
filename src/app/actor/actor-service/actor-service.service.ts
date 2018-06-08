@@ -17,7 +17,6 @@ export class ActorServiceService {
   mensajeActual3 = this.fuenteMensaje3.asObservable();
   constructor() { }
 
-
   cambiarMensaje(mensaje) {
     this.fuenteMensaje.next(mensaje);
   }
@@ -30,4 +29,8 @@ export class ActorServiceService {
     this.fuenteMensaje3.next(mensaje);
   }
 
+  dioClic() {
+    console.log('Dio Clic');
+    return false;
+  }
 }

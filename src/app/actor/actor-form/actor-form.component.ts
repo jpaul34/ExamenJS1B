@@ -14,15 +14,12 @@ export class ActorFormComponent implements OnInit {
   fechaNacimientoAct: Date;
   numPeliculasAct: number;
   retiradoAct: true;
-  @Output() dioClickEnRegistro: EventEmitter<boolean> = new EventEmitter();
+  // @Output() dioClickEnRegistro: EventEmitter<boolean> = new EventEmitter();
 
   mensaje = [];
-  @Output() arregloActores = [];
+  arregloActores = [];
 
   constructor(private data: ActorServiceService) { }
-
-  ngOnInit() {
-  }
 
   limiparPantalla() {
     this.nombresAct = '';
@@ -32,41 +29,36 @@ export class ActorFormComponent implements OnInit {
     this.retiradoAct = null;
   }
 
-  registrar() {
-    // this.arregloActores.push(
-    //   {
-    //     'nombres': this.nombresAct,
-    //     'apellidos': this.fechaNacimientoAct,
-    //     'fechaNacimiento': this.fechaNacimientoAct,
-    //     'numeroPeliculas': this.numPeliculasAct,
-    //     'retirado': this.retiradoAct,
-    //     'peliculas': []
-    //   });
-    console.log('Registrado exitosamente');
-    // return  {
-    //   'nombres': this.nombresAct,
-    //   'apellidos': this.fechaNacimientoAct,
-    //   'numeroPeliculas': this.numPeliculasAct,
-    //   'retirado': this.retiradoAct,
-    //   'peliculas': []
-    // };
+  ngOnInit() {
+    this.data.mensajeActual.subscribe(mensaje => this.mensaje = mensaje);
   }
 
+  mostrarInformacion(event, formData) {
+    console.log(event);
+    console.log(formData.value);
 
-  obtenerDatosActor() {
+  }
+
+  registrarActor() {
     this.arregloActores.push(
       {
         'nombres': this.nombresAct,
-        'apellidos': this.fechaNacimientoAct,
+        'apellidos': this.apellidosAct,
         'fechaNacimiento': this.fechaNacimientoAct,
         'numeroPeliculas': this.numPeliculasAct,
         'retirado': this.retiradoAct,
         'peliculas': []
       });
-    // return this.arregloActores;
+
+    this.cargarDatos();
+
+    console.log(this.arregloActores);
   }
 
-  hizoClickEnRegistro() {
-    this.dioClickEnRegistro.emit(true);
+  cargarDatos() {
+
+    this.data.cambiarMensaje(this.arregloActores);
   }
+
+
 }

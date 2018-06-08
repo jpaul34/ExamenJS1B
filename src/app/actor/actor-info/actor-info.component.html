@@ -1,12 +1,10 @@
 <div class="row"  style="margin-left: 20px">
-  <div class="col-sm-2" *ngFor="let info of mensaje; let indice = index" style="margin-right: 20px; margin-top: 20px">
+  <div class="col-sm-2" *ngFor="let info of mensaje; let indice = index" style="margin-right: 20px; margin-top: 20px; width: 100%">
     <p-card title="{{info.nombres}}" subtitle="{{info.apellidos}}"
-            style="width: 100%; height: 100%" styleClass="ui-card-shadow"
+            [style]="{width: '100%'}"
             (click)="enviarDatos(indice)"
+            styleClass="ui-card-content"
     >
-      <!--<p-footer>-->
-        <!--&lt;!&ndash;<button mat-button type="button" class="btn btn-primary" (click)="enviarDatos(indice)">Detalle</button>&ndash;&gt;-->
-      <!--</p-footer>-->
     </p-card>
   </div>
 </div>
