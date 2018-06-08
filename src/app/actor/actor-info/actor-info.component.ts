@@ -21,16 +21,5 @@ export class ActorInfoComponent implements OnInit {
     this.actorCard = [];
     this.actorCard.push(this.mensaje[indice]);
     this.data.cambiarMensaje2(this.actorCard);
-    // ActorInfoComponent.mostrarElementos();
   }
-  //
-  // mostrarElementos() {
-  //   const mostrarTabla = <HTMLFormElement>document.getElementById('tablaDetalle');
-  //   // mostrarTabla.style.display = 'block';
-  //   const mostrarFormDetalle = <HTMLFormElement>document.getElementById('formDetalle');
-  //   // mostrarFormDetalle.style.display = 'block';
-  //   const mostrarTarjeta = <HTMLFormElement>document.getElementById('tarjeta');
-  //   // mostrarTarjeta.style.display = 'block';
-  // }
-
 }
