@@ -28,10 +28,10 @@
 <div id="tablaDetalle">
   <div *ngFor="let datos of datosTabla; let i = index">
     <div *ngIf="i==indice">
-      <p>el indice es {{i}}</p>
-      <p>el indice es {{indice}}</p>
-      <p>el indice es {{i==indice}}</p>
-      <h2>---- {{i}} {{datos.nombres}}</h2>
+      <!--<p>el indice es {{i}}</p>-->
+      <!--<p>el indice es {{indice}}</p>-->
+      <!--<p>el indice es {{i==indice}}</p>-->
+      <!--<h2>&#45;&#45;&#45;&#45; {{i}} {{datos.nombres}}</h2>-->
 
       <p-table [value]="datos">
         <ng-template pTemplate="header">
