@@ -62,7 +62,7 @@ export class PeliculaFormComponent implements OnInit {
     console.log(this.arregloTabla);
     this.data.setIndice(this.actorId);
     this.data.cambiarMensaje3(this.arregloTabla);
-    // this.arregloTabla = [];
+    this.arregloTabla = [];
   }
 
   limiparPantalla() {
