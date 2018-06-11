@@ -15,22 +15,23 @@ export class PeliculaFormComponent implements OnInit {
   rating: number;
   actoresPrincipales: string;
   sinopsis: string;
-  actorId: number;
+  actorId;
 
   formDetalle: FormGroup;
   arregloActores = [];
   arregloTabla = [];
-  dioClicEnInfo = true;
+  indice;
 
   constructor(private data: ActorServiceService) {
   }
 
   ngOnInit() {
     this.data.mensajeActual2.subscribe(mensaje => this.arregloActores = mensaje);
+    this.data.mensajeIndice.subscribe(mensaje => this.actorId = mensaje);
   }
 
   registrarPelicula() {
-
+    console.log('indice   --  ', this.actorId);
     this.arregloActores.push(
       {
         'nombres': this.arregloActores[0].nombres,
@@ -59,8 +60,9 @@ export class PeliculaFormComponent implements OnInit {
 
   enviarDatos() {
     console.log(this.arregloTabla);
+    this.data.setIndice(this.actorId);
     this.data.cambiarMensaje3(this.arregloTabla);
-    this.arregloTabla = [];
+    // this.arregloTabla = [];
   }
 
   limiparPantalla() {
@@ -72,5 +74,10 @@ export class PeliculaFormComponent implements OnInit {
     this.sinopsis = '';
     this.actorId = null;
   }
+
+  actualizarIndice() {
+    this.indice = this.data.getIndice();
+  }
+
 
 }

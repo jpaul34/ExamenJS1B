@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
+import index from '@angular/cli/lib/cli';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,14 @@ export class ActorServiceService {
 
   private fuenteMensaje3 = new BehaviorSubject<any>([]);
 
+  private indice = new BehaviorSubject<number>(0);
+
+
   mensajeActual = this.fuenteMensaje.asObservable();
   mensajeActual2 = this.fuenteMensaje2.asObservable();
   mensajeActual3 = this.fuenteMensaje3.asObservable();
+  mensajeIndice = this.indice.asObservable();
+
   constructor() { }
 
   cambiarMensaje(mensaje) {
@@ -29,8 +35,11 @@ export class ActorServiceService {
     this.fuenteMensaje3.next(mensaje);
   }
 
-  dioClic() {
-    console.log('Dio Clic');
-    return false;
+  setIndice(mensaje) {
+    this.indice.next(mensaje);
+  }
+
+  getIndice() {
+    return this.indice;
   }
 }

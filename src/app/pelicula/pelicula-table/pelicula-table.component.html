@@ -1,29 +1,139 @@
-<div>
-  <p-table [value]="datosTabla">
-    <ng-template pTemplate="header">
-      <tr>
-        <th>#</th>
-        <th>ID PELICULA</th>
-        <th>NOMBRE</th>
-        <th>AÑO</th>
-        <th>RATING</th>
-        <th>ACTORES</th>
-        <th>SINOPSIS</th>
-        <th>ID ACTOR</th>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-datosTabla>
-      <tr *ngFor="let datosTabla of datosTabla[0].peliculas; let i = index">
-        <th>{{i+1}}</th>
-        <td>{{datosTabla.identificadorPelicula}}</td>
-        <td>{{datosTabla.nombre}}</td>
-        <td>{{datosTabla.anioLanzamiento}}</td>
-        <td>{{datosTabla.rating}}</td>
-        <td>{{datosTabla.actoresPrincipales}}</td>
-        <td>{{datosTabla.sinopsis}}</td>
-        <td>{{datosTabla.actorId}}</td>
-      </tr>
-    </ng-template>
-  </p-table>
+<h2>Peliculas del Actor {{indice}}: </h2>
+
+<!--<div *ngFor="let datos of datosTabla; let i = index">-->
+  <!--<div *ngIf="i==indice">-->
+    <!--<p>el indice es {{i}}</p>-->
+    <!--<p>el indice es {{indice}}</p>-->
+    <!--<p>el indice es {{i==indice}}</p>-->
+    <!--&lt;!&ndash;<p>  </p>&ndash;&gt;-->
+    <!--<h2> {{i}} {{datos[0].nombre}}</h2>-->
+  <!--</div>-->
+<!--</div>-->
+<!--<h1>Actor {{datosTabla[getIndice()].nombre}}</h1>-->
+<!--<p-table>-->
+  <!--<ng-template pTemplate="header">-->
+    <!--<tr>-->
+      <!--<th style="text-align: center">#</th>-->
+      <!--<th>ID Pelicula</th>-->
+      <!--<th>Nombre</th>-->
+      <!--<th>Año</th>-->
+      <!--<th>Rating</th>-->
+      <!--<th>Actores</th>-->
+      <!--<th>Sinopsis</th>-->
+      <!--<th>ActorId</th>-->
+    <!--</tr>-->
+  <!--</ng-template>-->
+<!--</p-table>-->
+
+<div id="tablaDetalle">
+  <div *ngFor="let datos of datosTabla; let i = index">
+    <div *ngIf="i==indice">
+      <p>el indice es {{i}}</p>
+      <p>el indice es {{indice}}</p>
+      <p>el indice es {{i==indice}}</p>
+      <h2>---- {{i}} {{datos.nombres}}</h2>
+
+      <p-table [value]="datos">
+        <ng-template pTemplate="header">
+          <!--<h3 style="padding-top: 20px; width: 400px">Actor {{datos[0].nombres}}</h3>-->
+          <tr>
+            <th style="text-align: center">#</th>
+            <th>ID Pelicula</th>
+            <th>Nombre</th>
+            <th>Año</th>
+            <th>Rating</th>
+            <th>Actores</th>
+            <th>Sinopsis</th>
+            <th>ActorId</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-car>
+          <tr *ngFor="let datosTabla of datos[0].peliculas; let j = index">
+            <th>{{j+1}}</th>
+            <td>{{datosTabla.identificadorPelicula}}</td>
+            <td>{{datosTabla.nombre}}</td>
+            <td>{{datosTabla.anioLanzamiento}}</td>
+            <td>{{datosTabla.rating}}</td>
+            <td>{{datosTabla.actoresPrincipales}}</td>
+            <td>{{datosTabla.sinopsis}}</td>
+            <td>{{datosTabla.actorId}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
 </div>
+
+
+
+<!--<div id="tablaDetalle" style="padding-bottom: 20px">-->
+  <!--<div *ngFor="let datos of datosTabla; let i = index">-->
+    <!--<div *ngIf="i==indice">-->
+      <!--<p-table [value]="datos">-->
+        <!--<ng-template pTemplate="header">-->
+          <!--<tr>-->
+            <!--<th style="text-align: center">#</th>-->
+            <!--<th>ID Pelicula</th>-->
+            <!--<th>Nombre</th>-->
+            <!--<th>Año</th>-->
+            <!--<th>Rating</th>-->
+            <!--<th>Actores</th>-->
+            <!--<th>Sinopsis</th>-->
+            <!--<th>ActorId</th>-->
+          <!--</tr>-->
+        <!--</ng-template>-->
+          <!--<ng-template pTemplate="header">-->
+          <!--</ng-template>-->
+          <!--<ng-template pTemplate="body" let-car>-->
+            <!--<tr *ngFor="let datospeli of datos[0].peliculas; let j = index">-->
+              <!--<th>{{j+1}}</th>-->
+              <!--<td>{{datospeli.identificadorPelicula}}</td>-->
+              <!--<td>{{datospeli.nombre}}</td>-->
+              <!--<td>{{datospeli.anioLanzamiento}}</td>-->
+              <!--<td>{{datospeli.rating}}</td>-->
+              <!--<td>{{datospeli.actoresPrincipales}}</td>-->
+              <!--<td>{{datospeli.sinopsis}}</td>-->
+              <!--<td>{{datospeli.actorId}}</td>-->
+            <!--</tr>-->
+          <!--</ng-template>-->
+        <!--</p-table>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+
+
+<!--<div>-->
+  <!--<p-table [value]="datosTablaPelicula">-->
+    <!--<ng-template pTemplate="header">-->
+      <!--<tr>-->
+        <!--<th>#</th>-->
+        <!--<th>ID PELICULA</th>-->
+        <!--<th>NOMBRE</th>-->
+        <!--<th>AÑO</th>-->
+        <!--<th>RATING</th>-->
+        <!--<th>ACTORES</th>-->
+        <!--<th>SINOPSIS</th>-->
+        <!--<th>ID ACTOR</th>-->
+      <!--</tr>-->
+    <!--</ng-template>-->
+    <!--<ng-template pTemplate="body" let-datosTabla>-->
+      <!--<div *ngFor="let datosTabla of datosTablaPelicula;" let i = index>-->
+        <!--<div *ngIf="i == indice" >-->
+          <!--<tr *ngFor="let datosPelicula of datosTabla[i].peliculas; let j = index">-->
+            <!--<th>{{j+1}}</th>-->
+            <!--<td>{{datosTabla.identificadorPelicula}}</td>-->
+            <!--<td>{{datosTabla.nombre}}</td>-->
+            <!--<td>{{datosTabla.anioLanzamiento}}</td>-->
+            <!--<td>{{datosTabla.rating}}</td>-->
+            <!--<td>{{datosTabla.actoresPrincipales}}</td>-->
+            <!--<td>{{datosTabla.sinopsis}}</td>-->
+            <!--<td>{{datosTabla.actorId}}</td>-->
+          <!--</tr>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</ng-template>-->
+  <!--</p-table>-->
+<!--</div>-->
 
